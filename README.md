@@ -8,16 +8,19 @@ Mokki Editor is a lightweight HTML5 WYSIWYG / HTML Rich Text Editor. Some featur
 	- Insert image location
 	- Light Weight
 	
-Instalation
------------
-	
-	Mokki.editor('.damnEditor');
 
 Requirements
 ------------
 
 	- jquery-1.11.1.min.js
 	- font-awesome-4.1.0 or Higher
+
+
+Instalation
+-----------
+	
+	Mokki.editor('.damnEditor');
+
 	
 Contact
 -------
