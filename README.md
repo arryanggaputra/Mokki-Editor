@@ -18,8 +18,31 @@ Requirements
 
 Instalation
 -----------
+* Include mokki editor library 
+```html
+<script src="mokki_asset/mokki_js/core.js"></script>
+```
 	
-	Mokki.editor('.damnEditor');
+* Include mokki style library
+```html
+<link href="mokki_asset/mokki_style/core.css" rel="stylesheet"/>
+```
+
+* Include Font Awesome library 
+```html	
+<link href="resource/css/font-awesome.min.css" rel="stylesheet"/>
+```
+	
+
+How to use?
+-----------
+Just call mokki function in your javascript
+
+```js	
+	$(function () {
+		Mokki.editor('.your_Text_Area');
+	});	
+```
 
 	
 Contact
