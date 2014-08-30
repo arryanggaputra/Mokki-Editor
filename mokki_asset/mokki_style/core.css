@@ -1,0 +1,300 @@
+/*@import url('http://fonts.googleapis.com/css?family=Open+Sans');*/
+.mokkiEditor {
+	font-family: 'Open Sans', sans-serif;
+	margin: 0px;
+	padding: 0px;
+	display: block;
+	border: 1px solid #D1D1D1;
+	font-size: 14px;
+}
+.mokkiEditor #mokkiTextEmbed {
+    padding: 10px; min-height: 200px; overflow: auto; font-family: serif; font-size: 18px; line-height: 18px;  outline: none;
+    width: 96%;
+    border: none;
+    background: #333;
+    margin: 0px 3px;
+    color: #BDBDBD;
+}
+.mokkiEditor #mokkiTextPreview .MokkiPlaceholder{
+	font-style: italic;
+	color: #BDBDBD;
+}
+.mokkiEditor #mokkiTextPreview {
+    padding: 10px;
+    min-height: 200px;
+    overflow: auto;
+    font-family: serif;
+    font-size: 18px;
+    line-height: 1.7em;
+    color: #3A3A3A;
+    outline: none;
+}
+.mokkiEditor .mokkiButtonBar {
+    border-bottom: 1px solid #D1D1D1;
+    display: inline-block;
+    width: 100%;
+}
+.mokkiEditor .mokkiButtonBar .sparator{
+    display: inline-block; width: 0px; 
+    height: 30px; margin: 0; border-right: solid 1px #cccccc; 
+    float: left;
+}
+
+.mokkiEditor .mokki-btn:hover{
+    border-color: inherit;
+    background: #444;
+    color: #fff !important;
+}
+.mokkiEditor .mokki-btn{
+    display: inline-block;
+    padding: 8px 2px;
+    color: #444;
+    line-height: 14px;
+    text-align: center;
+    font-size: 14px;
+    text-decoration: none;
+    -moz-transition: 0.3s ALL 0s ease; -webkit-transition:0.3s ALL 0s ease; -o-transition:0.3s ALL 0s ease;
+    float: left;
+    cursor: pointer;
+}
+
+.mokkiEditor .mokki-btn .fa{
+    display: block;
+    width: 27px;
+}
+.mokkiEditor .mokki-dropdown {
+    padding-right: 12px !important;
+    position: relative;
+}
+.mokkiEditor .mokki-btn-active{
+    background: #FFAD00 !important;
+    color: #444;
+}
+.mokkiEditor .mokkiButtonBar .mokki-dropdown i:first-child{
+    position: relative;
+}
+.mokkiEditor .mokkiButtonBar .mokki-dropdown i:after {
+    display: block;
+    position: absolute;
+    top: 39%;
+    right: -3px;
+    width: 0;   height: 0;   
+    border-left: 3px solid transparent;  
+    border-right: 3px solid transparent;    
+    border-top: 4px solid #444;
+    content: "";
+}
+.mokkiEditor .mokkiButtonBar .mokki-dropdown:hover i:after {
+    border-top: 4px solid #fff;
+}
+.mokkiEditor .mokkiButtonBar .mokki-dropdown ul i:after{
+    display: none;
+}
+.mokkiEditor .mokkiButtonBar .mokki-dropdown ul {
+    list-style: none;
+    border: 1px solid #D1D1D1;
+    border-top: 5px solid #D1D1D1;
+    background: #fff;
+    margin: 0px;
+    padding: 0px 0px;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    display: none;
+}
+.mokkiEditor .mokkiButtonBar .mokki-dropdown ul:after {
+    display: block;                position: absolute;    
+    top: -12px;    
+    left: 6px;    width: 0;   height: 0;       
+    border-left: 6px solid transparent;      
+    border-right: 6px solid transparent;        
+    border-bottom: 7px solid #D1D1D1;    
+    content: "";    
+}
+.mokkiEditor .mokkiButtonBar .mokki-dropdown ul li {
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    float: none;
+}
+.mokkiEditor .mokki-dropdown ul li .mokki-btn {
+    display: block ;
+    float: none ;
+    /* text-align: left ; */
+    padding: 8px 6px;
+    /* font-size: 13px; */
+    white-space: nowrap;
+}
+.mokkiEditor .mokki-form-area {
+    display: block;
+    margin: 5px;
+}
+.mokkiEditor .mokki-form-btn {
+    display: block;
+    background: #444;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+.mokkiEditor .mokki-form {
+    border: 1px solid #e3e3e3;
+    padding: 5px;
+    display: inline-block;
+}
+.mokkiEditor .mokki-form:focus {
+	outline:none;
+	border:1px solid #333;
+}
+.mokkiEditor .mokki-dropdown ul.align-left li .mokki-btn {
+    text-align: left ; 
+    padding: 5px 15px;
+}
+.mokkiEditor .mokki-dropdown .heading {
+    margin: 0px;
+    display: block;
+}
+.mokkiEditor .mokkiButtonBar .mokki-dropdown h1{
+    font-size: 24px;
+    line-height: 25px;
+}
+.mokkiEditor .mokkiMedia {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.08);
+    margin: 0px;
+    z-index: 99999999;
+    display: none;
+}
+.mokkiEditor .mokkiMedia .mokkiMediaArea{
+    display: block;
+    width: 65%;
+    height: 85%;
+    background: #fff;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 1px solid #d1d1d1;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.06);
+}
+.mokkiEditor .mokkiMedia .mokkiMediaArea .mokkiMediaHeader{
+    margin: 0px;
+    padding: 0px 15px;
+    display: block;
+    /* border-bottom: 1px solid #d1d1d1; */
+}
+.mokkiEditor .mokkiMedia .mokkiMediaArea .mokkiMediaHeader h1{
+    margin: 10px 0px;
+    padding: 0px;
+    font-weight: normal;
+    font-size: 21px;
+    display: inline-block;
+}
+.mokkiEditor .mokkiMedia .mokkiCloseMedia {
+    cursor: pointer;
+    display: block;
+    float: right;
+    color: #c00;
+    font-size: 19px;
+    line-height: 11px;
+    border: 1px solid transparent;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 50%;
+}
+.mokkiEditor .mokkiMedia .mokkiCloseMedia:hover{
+    border: 1px solid #e3e3e3;   
+}
+.mokkiEditor .mokkiMedia .mokkiMediaArea .mokkiMediaContent{
+    margin: 0px; padding: 10px 15px; display: block; 
+}
+.mokkiEditor .mokkiMedia .mokkiMediaArea .mokkiMediaContent .mokkiTabs{
+    /* overflow: hidden; */
+}
+.mokkiEditor .mokkiMedia .mokkiMediaArea .mokkiMediaContent .mokkiTabs .mokkiTabsContainer{
+    display: none;
+    overflow: auto;
+    position: relative;
+}
+.mokkiEditor .mokkiMedia .mokkiMediaArea .mokkiMediaContent .mokkiTabs ul {
+    list-style: none;
+    margin: 0px;
+    border-bottom: 1px solid #d1d1d1;
+    width: 100%;
+    padding: 0px;
+    display: table;
+}
+.mokkiEditor .mokkiMedia .mokkiMediaArea .mokkiMediaContent .mokkiTabs ul li.active{
+    background: #fff;
+    border: 1px solid #d1d1d1;
+    border-bottom: #fff;
+    margin-top: 0px;
+    color: #444;
+    padding-bottom: 10px;
+}
+.mokkiEditor .mokkiMedia .mokkiMediaArea .mokkiMediaContent .mokkiTabs ul li:first-child {
+    margin-left: 15px;
+}
+.mokkiEditor .mokkiMedia .mokkiMediaArea .mokkiMediaContent .mokkiTabs ul li{
+    display: block;
+    margin: 0px;
+    padding: 8px 21px;
+    cursor: pointer;
+    float: left;
+    margin-bottom: -1px;
+    color: #C9C9C9;
+    border: 1px solid transparent;
+}
+.mokkiEditor .mokkiMedia .mokki-media-btn {
+    display: block;
+    float: right;
+    cursor: pointer;
+    background: #FFC200;
+    border: 1px solid #FFA300;
+    margin: 0px;
+    padding: 5px 7px;
+} 
+.mokkiEditor .mokkiMedia .mokki-media-btn:disabled {
+    color: #A0A0A0;
+    background: #FFEB9D;
+    border: 1px solid transparent;
+    cursor: not-allowed;
+} 
+.mokkiEditor .mokkiMedia .mediaList {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding-top: 8px;
+    padding-top: 2;
+}
+.mokkiEditor .mokkiMedia .mediaList .mediaItems{
+    display: block;
+    width: 200px;
+    height: 120px;
+    background: #F3F3F3;
+    float: left;
+    margin: 5px;
+    position: relative;
+    border: 1px solid #e3e3e3;
+    cursor: pointer;
+}
+.mokkiEditor .mokkiMedia .mediaList .mediaActive{
+    border: 1px solid #B8B8B8;
+}
+.mokkiEditor .mokkiMedia .mediaList .mediaItems .spanIcon{ 
+    position: absolute; 
+    top: 42%; bottom: 0; left: 0; right: 0;
+    display: inline-block;
+    text-align: center;
+    color: #A7A7A7;
+}
+.mokkiEditor .mokkiMedia .mediaList .mediaItems:hover {
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.12);
+	
+}
