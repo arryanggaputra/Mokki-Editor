@@ -8,9 +8,9 @@ Mokki = {
         MokkiObject.embedArea       = $(mokkiElement).find('#mokkiTextEmbed');
         MokkiObject.placeholder     = (undefined !== MokkiObject.embedArea.attr('placeholder')) ? '<span class="MokkiPlaceholder">'+MokkiObject.embedArea.attr('placeholder')+'</span>' : '';
         var defaultText = (MokkiObject.embedArea.text() !== '' ) ? MokkiObject.embedArea.text() : MokkiObject.placeholder ;
-        $(MokkiObject.embedArea).before('<div id="mokkiTextPreview" contenteditable="true" spellcheck="false">'+defaultText+'</div>').hide();   
+        MokkiObject.embedArea.before('<div id="mokkiTextPreview" contenteditable="true">'+defaultText+'</div>').hide();   
         MokkiObject.previewArea     = $(mokkiElement+' #mokkiTextPreview');
-        $(MokkiObject.previewArea).before('<div class="mokkiButtonBar" id="mokkiButtonBar"></div>');    
+        MokkiObject.previewArea.before('<div class="mokkiButtonBar" id="mokkiButtonBar"></div>');    
         MokkiObject.buttonBar       = $(mokkiElement+' #mokkiButtonBar');
         Mokki.events.focused();
         var buttonList = (''
@@ -65,6 +65,11 @@ Mokki = {
                 +'<span class="sparator"></span>'            
                 +'<a class="mokki-btn mokki-cmd" href="#" data-command="viewsource"><i class="fa fa-code"></i></a>'
             );
+        MokkiObject.previewArea.on('input',function() {
+            if (MokkiObject.previewArea.html() !== MokkiObject.embedArea.html()) {
+                MokkiObject.embedArea.html(MokkiObject.previewArea.html());
+            };
+        });    
         MokkiObject.buttonBar.html(buttonList);		
         MokkiObject.dropDown        = $(mokkiElement+' .mokki-dropdown');
         MokkiObject.buttonBar.button= MokkiObject.buttonBar.find('.mokki-cmd');
@@ -121,7 +126,6 @@ Mokki = {
                             MokkiObject.previewArea.html(MokkiObject.placeholder);
                         }
                         MokkiObject.previewArea.show();
-
                     break;
                     
                     default:
