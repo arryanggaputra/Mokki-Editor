@@ -7,7 +7,8 @@ Mokki = {
         document.execCommand('defaultParagraphSeparator', false, 'p');
         MokkiObject.embedArea       = $(mokkiElement).find('#mokkiTextEmbed');
         MokkiObject.placeholder     = (undefined !== MokkiObject.embedArea.attr('placeholder')) ? '<span class="MokkiPlaceholder">'+MokkiObject.embedArea.attr('placeholder')+'</span>' : '';
-        $(MokkiObject.embedArea).before('<div id="mokkiTextPreview" contenteditable="true" spellcheck="false">'+MokkiObject.placeholder+'</div>').hide();   
+        var defaultText = (MokkiObject.embedArea.text() !== '' ) ? MokkiObject.embedArea.text() : MokkiObject.placeholder ;
+        $(MokkiObject.embedArea).before('<div id="mokkiTextPreview" contenteditable="true" spellcheck="false">'+defaultText+'</div>').hide();   
         MokkiObject.previewArea     = $(mokkiElement+' #mokkiTextPreview');
         $(MokkiObject.previewArea).before('<div class="mokkiButtonBar" id="mokkiButtonBar"></div>');    
         MokkiObject.buttonBar       = $(mokkiElement+' #mokkiButtonBar');
