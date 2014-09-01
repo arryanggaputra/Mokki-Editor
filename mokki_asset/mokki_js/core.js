@@ -67,7 +67,7 @@ Mokki = {
             );
         MokkiObject.buttonBar.html(buttonList);		
         MokkiObject.dropDown        = $(mokkiElement+' .mokki-dropdown');
-        MokkiObject.buttonBar.button= MokkiObject.buttonBar.find('.mokki-cmd');
+        MokkiObject.buttonBar.button= MokkiObject.buttonBar.find('.mokki-btn');
         MokkiObject.dropDown.on('mouseover',  function() {
             $(this).find('ul').show();
         }).on('mouseout', function () {
