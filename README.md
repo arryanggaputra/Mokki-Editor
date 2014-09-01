@@ -1,6 +1,9 @@
 Mokki-Editor
 ============
 
+![alt tag](https://raw.githubusercontent.com/arryanggaputra/Mokki-Editor/master/resource/screenShoot.png)
+
+
 Mokki Editor is a lightweight HTML5 WYSIWYG / HTML Rich Text Editor. Some feature are included :
 
 	- HTML live preview
