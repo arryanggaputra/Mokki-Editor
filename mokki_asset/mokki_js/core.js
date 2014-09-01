@@ -67,7 +67,7 @@ Mokki = {
             );
         MokkiObject.buttonBar.html(buttonList);		
         MokkiObject.dropDown        = $(mokkiElement+' .mokki-dropdown');
-        MokkiObject.buttonBar.button= MokkiObject.buttonBar.find('.mokki-btn');
+        MokkiObject.buttonBar.button= MokkiObject.buttonBar.find('.mokki-cmd');
         MokkiObject.dropDown.on('mouseover',  function() {
             $(this).find('ul').show();
         }).on('mouseout', function () {
@@ -78,6 +78,7 @@ Mokki = {
         })
         MokkiObject.buttonBar.button.on('click', function (e) {
             var command = $(this).attr('data-command');
+            console.log(command);
             var value   = $(this).attr('data-value');
             if (command !== "undefined" &&   command !== undefined ) {   
                 switch (command) {
@@ -97,6 +98,7 @@ Mokki = {
 
                     case 'insertEmbed':
                         var embed = $('#mokki-embed-input').val();
+                        console.log(embed)
                         if ((embed !== null) && (embed !== "")) {
                            Mokki.events.createStyle('InsertHtml', embed);
                         }                        
@@ -131,8 +133,8 @@ Mokki = {
         if (mokkiAdditional) {
             MokkiObject.config = mokkiAdditional;
             if (MokkiObject.config['colorGlobal']) {
-                MokkiObject.buttonBar.button.css({'color' : MokkiObject.config['colorGlobal'], });
-                MokkiObject.buttonBar.button.on('mouseover', function () {
+                MokkiObject.buttonBar.find('.mokki-btn').css({'color' : MokkiObject.config['colorGlobal'], });
+                MokkiObject.buttonBar.find('.mokki-btn').on('mouseover', function () {
                     $(this).css({'background':MokkiObject.config['colorGlobal']});
                 }).on('mouseout', function () {
                     $(this).css({'background':'#fff'});
