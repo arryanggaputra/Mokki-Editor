@@ -2,6 +2,7 @@ if("undefined"==typeof jQuery)throw new Error("Mokki Editor requires jQuery");
 var Mokki       = Mokki || {};
 var MokkiObject = new Object();
 var MokkiImageList = new Array;
+var MokkiSaveSelection, MokkiRestoreSelection, MokkiSavedSelection;;
 Mokki = {
     editor: function(mokkiElement, mokkiAdditional) {
         document.execCommand('defaultParagraphSeparator', false, 'p');
@@ -81,6 +82,10 @@ Mokki = {
         MokkiObject.dropDown.find('.mokki-form').on('click', function (e) {
             e.stopPropagation(); 
         })
+        var embedHtml = $('#mokki-embed-input');
+        embedHtml.on('mousedown', function(e){
+           MokkiSavedSelection = MokkiSaveSelection( document.getElementById("mokkiTextPreview") );
+        });
         MokkiObject.buttonBar.button.on('click', function (e) {
             var command = $(this).attr('data-command');
             console.log(command);
@@ -102,10 +107,9 @@ Mokki = {
                     break;
 
                     case 'insertEmbed':
-                        var embed = $('#mokki-embed-input').val();
-                        console.log(embed)
-                        if ((embed !== null) && (embed !== "")) {
-                           Mokki.events.createStyle('InsertHtml', embed);
+                        if ((embedHtml.val() !== null) && (embedHtml.val() !== "")) {
+                           Mokki.events.createStyle('InsertHtml', embedHtml.val());
+                            embedHtml.val('');
                         }                        
                     break;
 
@@ -157,12 +161,15 @@ Mokki.events = {
         });        
     },
     createStyle: function(command, commandValue) {
+        if (MokkiSavedSelection) {
+            MokkiRestoreSelection(document.getElementById("mokkiTextPreview"), MokkiSavedSelection);
+        }
         Mokki.events.cleanPlaceholder();
         MokkiObject.previewArea.focus();
-        document.execCommand(command, false, commandValue);
         if ('InsertImage' == command) {
             document.execCommand(enableObjectResizing, false, commandValue);
         };
+        document.execCommand(command, false, commandValue);
     },
     cleanPlaceholder : function () {
         if ( MokkiObject.previewArea.html() == MokkiObject.placeholder)  return MokkiObject.previewArea.html('');
@@ -170,4 +177,72 @@ Mokki.events = {
     realize:function (data) {
         return $('<textarea />').html(data).text();
     }
+}
+
+if (window.getSelection && document.createRange) {
+    MokkiSaveSelection = function(containerEl) {
+        var range = window.getSelection().getRangeAt(0);
+        var preSelectionRange = range.cloneRange();
+        preSelectionRange.selectNodeContents(containerEl);
+        preSelectionRange.setEnd(range.startContainer, range.startOffset);
+        var start = preSelectionRange.toString().length;
+
+        return {
+            start: start,
+            end: start + range.toString().length
+        }
+    };
+
+    MokkiRestoreSelection = function(containerEl, savedSel) {
+        var charIndex = 0, range = document.createRange();
+        range.setStart(containerEl, 0);
+        range.collapse(true);
+        var nodeStack = [containerEl], node, foundStart = false, stop = false;
+        
+        while (!stop && (node = nodeStack.pop())) {
+            if (node.nodeType == 3) {
+                var nextCharIndex = charIndex + node.length;
+                if (!foundStart && savedSel.start >= charIndex && savedSel.start <= nextCharIndex) {
+                    range.setStart(node, savedSel.start - charIndex);
+                    foundStart = true;
+                }
+                if (foundStart && savedSel.end >= charIndex && savedSel.end <= nextCharIndex) {
+                    range.setEnd(node, savedSel.end - charIndex);
+                    stop = true;
+                }
+                charIndex = nextCharIndex;
+            } else {
+                var i = node.childNodes.length;
+                while (i--) {
+                    nodeStack.push(node.childNodes[i]);
+                }
+            }
+        }
+
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+    }
+} else if (document.selection && document.body.createTextRange) {
+    MokkiSaveSelection = function(containerEl) {
+        var selectedTextRange = document.selection.createRange();
+        var preSelectionTextRange = document.body.createTextRange();
+        preSelectionTextRange.moveToElementText(containerEl);
+        preSelectionTextRange.setEndPoint("EndToStart", selectedTextRange);
+        var start = preSelectionTextRange.text.length;
+
+        return {
+            start: start,
+            end: start + selectedTextRange.text.length
+        }
+    };
+
+    MokkiRestoreSelection = function(containerEl, savedSel) {
+        var textRange = document.body.createTextRange();
+        textRange.moveToElementText(containerEl);
+        textRange.collapse(true);
+        textRange.moveEnd("character", savedSel.end);
+        textRange.moveStart("character", savedSel.start);
+        textRange.select();
+    };
 }
