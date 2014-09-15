@@ -45,15 +45,27 @@
 						<div class="mokkiTabs">
 							<ul>
 								<li data-tabs="1"><i class="fa fa-upload"></i> &nbsp;Upload</li>
-								<li data-tabs="2"><i class="fa fa-history"></i> &nbsp;Last Uploaded</li>
-								<li data-tabs="3"><i class="fa fa-globe"></i> &nbsp;Form URL</li>
+								<li data-tabs="2"><i class="fa fa-globe"></i> &nbsp;Form URL</li>
+								<li data-tabs="3"><i class="fa fa-folder"></i> &nbsp;Media</li>
 								<!-- <button class="mokkiAddSelected mokki-media-btn" disabled="true"> <i class="fa fa-plus"></i> &nbsp;Add Selected</button> -->
 							</ul>
+							<div class="mediaUploaderBar" id="1">
+								<div class="mediaUploaderBarContent">
+									<div class="fileUploadButton button">
+										<i class="fa fa-upload"></i> Choose files
+										<input type="file" required="required" multiple="multiple" name="mokkiPhoto">
+									</div>
+									<span class="text-info">You may upload multiple files at once. User JPG, GIF, or PNG files</span>
+								</div>
+							</div>
+							<div class="mediaUploaderBar" id="2">
+								<div class="mediaUploaderBarContent">
+									<button class="button">Get image </button>
+									<span class="text-info">Insert Image URL in the field above</span>
+								</div>
+							</div>
 							<div class="mokkiTabContainerSection">
 								<div class="mokkiTabsContainer" id="1">
-									<!-- <div class="mediaUploaderBar">
-										<input type="file" required="required" multiple="multiple" name="mokkiPhoto">
-									</div> -->
 									<div class="mediaList"> </div>
 								</div>
 								<div class="mokkiTabsContainer" id="2">Last Uploaded</div>
