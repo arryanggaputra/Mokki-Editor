@@ -35,8 +35,8 @@
     width: 100%;
 }
 .mokkiEditor .mokkiButtonBar .sparator{
-    display: inline-block; width: 0px; 
-    height: 30px; margin: 0; border-right: solid 1px #cccccc; 
+    display: inline-block; width: 0px;
+    height: 30px; margin: 0; border-right: solid 1px #cccccc;
     float: left;
 }
 
@@ -78,9 +78,9 @@
     position: absolute;
     top: 39%;
     right: -3px;
-    width: 0;   height: 0;   
-    border-left: 3px solid transparent;  
-    border-right: 3px solid transparent;    
+    width: 0;   height: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
     border-top: 4px solid #444;
     content: "";
 }
@@ -103,13 +103,13 @@
     display: none;
 }
 .mokkiEditor .mokkiButtonBar .mokki-dropdown ul:after {
-    display: block;                position: absolute;    
-    top: -12px;    
-    left: 6px;    width: 0;   height: 0;       
-    border-left: 6px solid transparent;      
-    border-right: 6px solid transparent;        
-    border-bottom: 7px solid #D1D1D1;    
-    content: "";    
+    display: block;                position: absolute;
+    top: -12px;
+    left: 6px;    width: 0;   height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 7px solid #D1D1D1;
+    content: "";
 }
 .mokkiEditor .mokkiButtonBar .mokki-dropdown ul li {
     display: block;
@@ -147,7 +147,7 @@
 	border:1px solid #333;
 }
 .mokkiEditor .mokki-dropdown ul.align-left li .mokki-btn {
-    text-align: left ; 
+    text-align: left ;
     padding: 5px 15px;
 }
 .mokkiEditor .mokki-dropdown .heading {
@@ -209,13 +209,22 @@
     border-radius: 50%;
 }
 .mokkiEditor .mokkiMedia .mokkiCloseMedia:hover{
-    border: 1px solid #e3e3e3;   
+    border: 1px solid #e3e3e3;
 }
 .mokkiEditor .mokkiMedia .mokkiMediaArea .mokkiMediaContent{
-    margin: 0px; padding: 10px 15px; display: block; 
+    margin: 0px; padding: 10px 15px; display: block;
 }
 .mokkiEditor .mokkiMedia .mokkiMediaArea .mokkiMediaContent .mokkiTabs{
     /* overflow: hidden; */
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.mokkiEditor .mokkiMedia .mokkiMediaArea .mokkiMediaContent .mokkiTabs .mokkiTabContainerSection{
+    display: block;
+    float: left;
+    width: 300px;
+    height: 100%;
 }
 .mokkiEditor .mokkiMedia .mokkiMediaArea .mokkiMediaContent .mokkiTabs .mokkiTabsContainer{
     display: none;
@@ -225,31 +234,34 @@
 .mokkiEditor .mokkiMedia .mokkiMediaArea .mokkiMediaContent .mokkiTabs ul {
     list-style: none;
     margin: 0px;
-    border-bottom: 1px solid #d1d1d1;
-    width: 100%;
+    width: 160px;
     padding: 0px;
-    display: table;
+    display: block;
+    float: left;
+    height: 100%;
+    position: relative;
+    border-right: 1px solid #E6E6E6;
 }
 .mokkiEditor .mokkiMedia .mokkiMediaArea .mokkiMediaContent .mokkiTabs ul li.active{
     background: #fff;
-    border: 1px solid #d1d1d1;
-    border-bottom: #fff;
     margin-top: 0px;
     color: #444;
     padding-bottom: 10px;
+    border-left: 4px solid #000;
+    background: #F5F5F5;
 }
 .mokkiEditor .mokkiMedia .mokkiMediaArea .mokkiMediaContent .mokkiTabs ul li:first-child {
-    margin-left: 15px;
+    /* margin-left: 15px; */
 }
 .mokkiEditor .mokkiMedia .mokkiMediaArea .mokkiMediaContent .mokkiTabs ul li{
     display: block;
     margin: 0px;
     padding: 8px 21px;
     cursor: pointer;
-    float: left;
     margin-bottom: -1px;
     color: #C9C9C9;
     border: 1px solid transparent;
+    border-left: 4px solid transparent;
 }
 .mokkiEditor .mokkiMedia .mokki-media-btn {
     display: block;
@@ -259,17 +271,17 @@
     border: 1px solid #FFA300;
     margin: 0px;
     padding: 5px 7px;
-} 
+}
 .mokkiEditor .mokkiMedia .mokki-media-btn:disabled {
     color: #A0A0A0;
     background: #FFEB9D;
     border: 1px solid transparent;
     cursor: not-allowed;
-} 
+}
 .mokkiEditor .mokkiMedia .mediaList {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 95%;
     padding-top: 8px;
     padding-top: 2;
 }
@@ -287,8 +299,8 @@
 .mokkiEditor .mokkiMedia .mediaList .mediaActive{
     border: 1px solid #B8B8B8;
 }
-.mokkiEditor .mokkiMedia .mediaList .mediaItems .spanIcon{ 
-    position: absolute; 
+.mokkiEditor .mokkiMedia .mediaList .mediaItems .spanIcon{
+    position: absolute;
     top: 42%; bottom: 0; left: 0; right: 0;
     display: inline-block;
     text-align: center;
@@ -296,5 +308,5 @@
 }
 .mokkiEditor .mokkiMedia .mediaList .mediaItems:hover {
     box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.12);
-	
+
 }
