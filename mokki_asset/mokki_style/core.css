@@ -212,7 +212,11 @@
     border: 1px solid #e3e3e3;
 }
 .mokkiEditor .mokkiMedia .mokkiMediaArea .mokkiMediaContent{
-    margin: 0px; padding: 10px 15px; display: block;
+    margin: 0px; padding: 10px 15px;
+    padding-left: 0px;
+    padding-top: 0px;
+    display: block;
+    border-top: 1px solid  #E6E6E6;
 }
 .mokkiEditor .mokkiMedia .mokkiMediaArea .mokkiMediaContent .mokkiTabs{
     /* overflow: hidden; */
@@ -224,7 +228,54 @@
     display: block;
     float: left;
     width: 300px;
+    height: 72%;
+}
+.mokkiEditor .mokkiMedia .mokkiMediaArea .mokkiMediaContent .mokkiTabs .mediaUploaderBar .mediaUploaderBarContent  {
+    margin: 10px;
+    position: relative;
+}
+.mokkiEditor .mokkiMedia .mokkiMediaArea .mokkiMediaContent .mokkiTabs .mediaUploaderBar .mediaUploaderBarContent  .fileUploadButton{
+    
+}
+.mokkiEditor .mokkiMedia .mokkiMediaArea .mokkiMediaContent .mokkiTabs .from-input {
+    padding: 5px;
+    border: 1px solid #d1d1d1;
+    margin: 3px;
+}
+.mokkiEditor .mokkiMedia .mokkiMediaArea .mokkiMediaContent .mokkiTabs .button{
+position: relative;
+    background: #494949;
+    display: inline-block;
+    cursor: pointer;
+    padding: 8px 16px;
+    margin: 1px 3px;
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;	
+border: none;
+}
+.mokkiEditor .mokkiMedia .mokkiMediaArea .mokkiMediaContent .mokkiTabs .text-info{
+    font-size: 11px;
+    display: block;
+    margin: 3px;
+    color: #707070;
+}
+.mokkiEditor .mokkiMedia .mokkiMediaArea .mokkiMediaContent .mokkiTabs .mediaUploaderBar .mediaUploaderBarContent  .fileUploadButton input{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    width: 100%;
     height: 100%;
+    cursor: pointer;
+}
+.mokkiEditor .mokkiMedia .mokkiMediaArea .mokkiMediaContent .mokkiTabs .mediaUploaderBar{
+    display: block; float: left;
+    width: 693px;
+    height: 64px;
+    position: relative;
+    border-bottom: 1px solid  #E6E6E6;
+    display: none;
 }
 .mokkiEditor .mokkiMedia .mokkiMediaArea .mokkiMediaContent .mokkiTabs .mokkiTabsContainer{
     display: none;
@@ -246,12 +297,11 @@
     background: #fff;
     margin-top: 0px;
     color: #444;
-    padding-bottom: 10px;
     border-left: 4px solid #000;
-    background: #F5F5F5;
+    font-weight: bold;
 }
 .mokkiEditor .mokkiMedia .mokkiMediaArea .mokkiMediaContent .mokkiTabs ul li:first-child {
-    /* margin-left: 15px; */
+    margin-top: 17px;
 }
 .mokkiEditor .mokkiMedia .mokkiMediaArea .mokkiMediaContent .mokkiTabs ul li{
     display: block;
@@ -279,11 +329,7 @@
     cursor: not-allowed;
 }
 .mokkiEditor .mokkiMedia .mediaList {
-    position: absolute;
-    width: 100%;
-    height: 95%;
-    padding-top: 8px;
-    padding-top: 2;
+    padding: 4px;
 }
 .mokkiEditor .mokkiMedia .mediaList .mediaItems{
     display: block;

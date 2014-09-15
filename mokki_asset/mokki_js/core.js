@@ -182,22 +182,35 @@ Mokki.events = {
             MokkiObject.media.area.find('.mokkiCloseMedia').on('click', function () {
                 Mokki.events.closeMedia();
             });
+            MokkiObject.media.area.uploaderBar = MokkiObject.media.area.find('.mokkiTabs .mediaUploaderBar');
             MokkiObject.media.area.find('.mokkiTabs ul li:first-child').addClass('active')
+            MokkiObject.media.area.find('.mokkiTabs .mediaUploaderBar#1').show();
             MokkiObject.media.area.find('.mokkiTabs ul li').on('click', function () {
                 MokkiObject.media.area.find('.mokkiTabs ul li').removeClass('active')
                 $(this).addClass('active');
                 MokkiObject.media.find('.mokkiTabsContainer').hide();
+                MokkiObject.media.area.uploaderBar.hide();
                 MokkiObject.media.find('.mokkiTabsContainer#'+$(this).attr('data-tabs')).show();
+                var MokkiUploadBar = MokkiObject.media.area.find('.mokkiTabs .mediaUploaderBar#'+$(this).attr('data-tabs'));
+                if (MokkiUploadBar.length) {
+                    MokkiUploadBar.show();
+                }
+                else{
+                      MokkiObject.media.find('.mokkiTabsContainer#'+$(this).attr('data-tabs')).height(Mokki.events.sizeMediaHeight('tabs') + 65);
+                }
             });
             MokkiObject.media.area.tabsUl = MokkiObject.media.area.find('.mokkiTabs ul');
             MokkiObject.media.area.containerSection = MokkiObject.media.area.find('.mokkiTabs .mokkiTabContainerSection');
             MokkiObject.media.area.container = MokkiObject.media.find('.mokkiMediaContent');
-            MokkiObject.media.area.containerSection.width( MokkiObject.media.area.width() - MokkiObject.media.area.tabsUl.width() - 31 );
+            MokkiObject.media.area.containerSection.width( Mokki.events.sizeMediaWidth() );
+            MokkiObject.media.area.uploaderBar.width( Mokki.events.sizeMediaWidth() );
             MokkiObject.media.area.container.height(Mokki.events.sizeMediaHeight());
             MokkiObject.media.find('.mokkiTabsContainer').height(Mokki.events.sizeMediaHeight('tabs'))
             window.onresize = function () {
                 MokkiObject.media.area.container.height(Mokki.events.sizeMediaHeight());
                 MokkiObject.media.find('.mokkiTabsContainer').height(Mokki.events.sizeMediaHeight('tabs'))
+                MokkiObject.media.area.containerSection.width( Mokki.events.sizeMediaWidth() );
+                MokkiObject.media.area.uploaderBar.width( Mokki.events.sizeMediaWidth() );
             }
             MokkiObject.media.find('.mokkiTabsContainer#1').show(function () {
                 $(this).find('.mediaList').html('<div class="mediaItems" data-url="http://localhost/2014_newmulia/public/img/users/1.jpg"><div class="spanIcon"><i class="fa fa-picture-o"></i> Loading </div></div><div class="mediaItems" data-url="http://localhost/2014_newmulia/public/img/users/2.jpg"><div class="spanIcon"><i class="fa fa-picture-o"></i> Loading </div></div>');
@@ -236,7 +249,7 @@ Mokki.events = {
     sizeMediaHeight : function (el) {
         switch (el) {
             case 'tabs':
-                return  Mokki.events.sizeMediaHeight();
+                return  Mokki.events.sizeMediaHeight() - 65;
             break;
 
             default:
@@ -244,6 +257,9 @@ Mokki.events = {
             break;
         }
 
+    },
+    sizeMediaWidth : function () {
+        return MokkiObject.media.area.width() - MokkiObject.media.area.tabsUl.width() - 16 ;
     },
     insertImageToEditor : function () {
         if (MokkiImageList.length > 0 ) {
