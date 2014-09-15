@@ -9,13 +9,13 @@
 	<script type="text/javascript">
 		$(function () {
 			Mokki.editor('.damnEditor', {
-				'colorGlobal' : '#c00' 
+				// 'colorGlobal' : '#c00'
 			});
 			// Costumize with custom color
 			// Mokki.editor('.damnEditor', {
-				// 'colorGlobal' : '#c00' 
+				// 'colorGlobal' : '#c00'
 			// });
-		});	
+		});
 	</script>
 	<style type="text/css">
 	.latihanGUe {
@@ -26,7 +26,7 @@
 </head>
 <body>
 	<div class="latihanGUe">
-		<div class="mokkiEditor damnEditor"> 
+		<div class="mokkiEditor damnEditor">
 			<textarea id="mokkiTextEmbed" placeholder="Insert text here">
 				<h1>Lorem ipsum dolor sit amet,</h1> consectetur adipisicing elit, sed do eiusmod
 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -35,7 +35,68 @@
 				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 			</textarea>
+			<div class="mokkiMedia">
+				<div class="mokkiMediaArea">
+					<div class="mokkiMediaHeader">
+						<h1>Select a file</h1>
+						<span class="mokkiCloseMedia">&times;</span>
+					</div>
+					<div class="mokkiMediaContent">
+						<div class="mokkiTabs">
+							<ul>
+								<li data-tabs="1"><i class="fa fa-upload"></i> &nbsp;Upload</li>
+								<li data-tabs="2"><i class="fa fa-history"></i> &nbsp;Last Uploaded</li>
+								<li data-tabs="3"><i class="fa fa-globe"></i> &nbsp;Form URL</li>
+								<!-- <button class="mokkiAddSelected mokki-media-btn" disabled="true"> <i class="fa fa-plus"></i> &nbsp;Add Selected</button> -->
+							</ul>
+							<div class="mokkiTabContainerSection">
+								<div class="mokkiTabsContainer" id="1">
+									<!-- <div class="mediaUploaderBar">
+										<input type="file" required="required" multiple="multiple" name="mokkiPhoto">
+									</div> -->
+									<div class="mediaList"> </div>
+								</div>
+								<div class="mokkiTabsContainer" id="2">Last Uploaded</div>
+								<div class="mokkiTabsContainer" id="3">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+									consequat.
+
+									Duis aute irure dolor in reprehenderit in voluptate velit esse
+									cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+									proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+									consequat.
+
+									Duis aute irure dolor in reprehenderit in voluptate velit esse
+									cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+									proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+									consequat.
+
+									Duis aute irure dolor in reprehenderit in voluptate velit esse
+									cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+									proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+									consequat.
+
+									Duis aute irure dolor in reprehenderit in voluptate velit esse
+									cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+									proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>	
+	</div>
 </body>
 </html>
